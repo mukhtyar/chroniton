@@ -298,6 +298,13 @@ function chroniton() {
     return chart;
   };
 
+  chart.margin = function(_) {
+    if (!arguments.length) return margin;
+    if (typeof _ !== 'object') throw new Error('argument must be a object with properties for the four sides (d3 margin convention)');
+    margin = _;
+    return chart;
+  };
+
   chart.domain = function(_) {
     if (!arguments.length) return domain;
     domain = _;
